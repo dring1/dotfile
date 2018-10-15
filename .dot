@@ -39,7 +39,7 @@ brew cask install \
     dropbox \
     google-chrome \
     spectacle \
-    #totalfinder \
+	1password \
     transmission \
     valentina-studio \
     vlc \
@@ -72,8 +72,9 @@ brew install zsh zsh-completions
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-echo plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting) >> "${HOME}/.zshrc"
+echo "plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting)" >> "${HOME}/.zshrc"
 
+source ~/.zshrc
 
 curl https://raw.githubusercontent.com/github/gitignore/master/Global/macOS.gitignore -o ~/.gitignore
 
