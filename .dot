@@ -53,11 +53,12 @@ brew install \
 	fzf \
 	ack \
 	git \
-    node \
+    	node \
 	shellcheck \
     imagemagick \
     yarn \
-    watchman
+    watchman \
+    dep
 	
 echo "export PATH=/usr/local/bin:${PATH}" >> "${HOME}"/.zshrc
 
