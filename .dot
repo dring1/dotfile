@@ -17,19 +17,6 @@ defaults write com.apple.screencapture location ${HOME}/Screenshots/ && killall 
 
 brew tap caskroom/cask	
 
-
-# quick lookup plugins
-brew cask install \
-    qlcolorcode \
-    qlstephen \
-    qlmarkdown \
-    quicklook-json \
-    qlprettypatch \
-    quicklook-csv \
-    betterzipql \
-    webpquicklook \
-    suspicious-package
-
 brew cask install \
     alfred \
     appcleaner \
@@ -38,27 +25,27 @@ brew cask install \
     docker \
     dropbox \
     google-chrome \
-    spectacle \
-    #totalfinder \
+    rectangle \
     transmission \
-    valentina-studio \
     vlc \
     iterm2 \
     visual-studio-code \
     spotify \
 	haptickey
 
+# install oh my zsh
+brew install zsh zsh-completions
+
 brew install \
 	tree \
 	fzf \
 	ack \
 	git \
-    	node \
+    node \
 	shellcheck \
     imagemagick \
     yarn \
-    watchman \
-    dep
+    watchman
 	
 echo "export PATH=/usr/local/bin:${PATH}" >> "${HOME}"/.zshrc
 
@@ -68,12 +55,10 @@ curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 # fonts
 brew tap caskroom/fonts && brew cask install font-source-code-pro
 
-# install oh my zsh
-brew install zsh zsh-completions
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-echo plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting) >> "${HOME}/.zshrc"
+echo plugins=(git colored-man colorize brew osx zsh-syntax-highlighting) >> "${HOME}/.zshrc"
 
 
 curl https://raw.githubusercontent.com/github/gitignore/master/Global/macOS.gitignore -o ~/.gitignore
@@ -94,7 +79,7 @@ mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
 
 // GET the vscode keybindings
 // clone vscode settings
-
 // Set up react
-
+// iterm2 profile 
+// rectangle config
 npm install -g react-native-cli eslint
