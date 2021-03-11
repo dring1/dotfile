@@ -8,58 +8,51 @@ defaults write com.apple.dock workspaces-auto-swoosh -bool NO && killall Dock
 # enable char repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-# screenshot dir 
+# screenshot dir
 mkdir -p ${HOME}/Screenshots
 defaults write com.apple.screencapture location ${HOME}/Screenshots/ && killall SystemUIServer
 
 # install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew tap caskroom/cask	
+brew tap caskroom/cask
 
 brew cask install \
-    alfred \
-    appcleaner \
-    caffeine \
     cheatsheet \
     docker \
-    dropbox \
     google-chrome \
     rectangle \
-    transmission \
     vlc \
     iterm2 \
     visual-studio-code \
     spotify \
-	haptickey
+    haptickey
 
 # install oh my zsh
 brew install zsh zsh-completions
 
 brew install \
-	tree \
-	fzf \
-	ack \
-	git \
+    tree \
+    fzf \
+    ack \
+    git \
     node \
-	shellcheck \
+    shellcheck \
     imagemagick \
     yarn \
     watchman
-	
-echo "export PATH=/usr/local/bin:${PATH}" >> "${HOME}"/.zshrc
+
+echo "export PATH=/usr/local/bin:${PATH}" >>"${HOME}"/.zshrc
 
 # iterm2 shell integration
 curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 
 # fonts
-brew tap caskroom/fonts && brew cask install font-source-code-pro
-
+brew tap homebrew/cask-fonts && brew cask install font-source-code-pro
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-echo plugins=(git colored-man colorize brew osx zsh-syntax-highlighting) >> "${HOME}/.zshrc"
-
+echo 'plugins=(git colored-man colorize brew osx zsh-syntax-highlighting)' >>"${HOME}/.zshrc"
 
 curl https://raw.githubusercontent.com/github/gitignore/master/Global/macOS.gitignore -o ~/.gitignore
 
@@ -69,17 +62,16 @@ brew install \
     golang
 mkdir -p "${HOME}"/Code
 
-echo "export GOPATH=$HOME/Code/go" >> "${HOME}"/.zshrc
-echo "export GOROOT=/usr/local/opt/go/libexec" >> "${HOME}"/.zshrc
-echo "export PATH=$PATH:$GOPATH/bin" >> "${HOME}"/.zshrc
-echo "export PATH=$PATH:$GOROOT/bin" >> "${HOME}"/.zshrc
+echo "export GOPATH=$HOME/Code/go" >>"${HOME}"/.zshrc
+echo "export GOROOT=/usr/local/opt/go/libexec" >>"${HOME}"/.zshrc
+echo "export PATH=$PATH:$GOPATH/bin" >>"${HOME}"/.zshrc
+echo "export PATH=$PATH:$GOROOT/bin" >>"${HOME}"/.zshrc
 
 mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
-
 
 // GET the vscode keybindings
 // clone vscode settings
 // Set up react
-// iterm2 profile 
+// iterm2 profile
 // rectangle config
 npm install -g react-native-cli eslint

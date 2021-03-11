@@ -19,14 +19,12 @@ prompt_setup_devon() {
 
 prompt_devon_precmd() {
 	local gitinfo=$(git_prompt_info)
-	# local DATE="[%{$fg[green]%}%D{%y/%m/%f} | %D{%H:%M:%S}%{$reset_color%}]"
 	local nl=""
 	if [[ -n $gitinfo ]]; then
 		gitinfo=" [${gitinfo}]"
 	fi
 	nl=$'\n%{\r%}'
 	PROMPT="$base_prompt$gitinfo$nl$post_prompt"
-	# RPROMPT="${DATE}"
 }
 
 prompt_setup_devon
